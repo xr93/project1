@@ -5,6 +5,15 @@ import matplotlib.pyplot as plt
 import numpy as np 
 import plotly.express as px
 
+st.set_page_config(page_title="Dashboard",page_icon=":shark:", layout="wide")
+
+st.title("Overview")
+
+# Load dataset
+df = pd.read_csv("dataset.csv")
+
+st.dataframe(df)
+
 pd.set_option('display.max_columns', 100)
 
 sns.set()
