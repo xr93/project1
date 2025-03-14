@@ -3,7 +3,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np 
 import plotly.express as px
-
+import seaborn as sns
 # Set the title of the main page
 st.title("Welcome to the Covid-19 Data App")
 
