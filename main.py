@@ -5,7 +5,32 @@ import matplotlib.pyplot as plt
 import numpy as np 
 import plotly.express as px
 
-st.set_page_config(page_title="Dashboard",page_icon=":shark:", layout="wide")
+# Set the title of the main page
+st.title("Welcome to the Covid-19 Data App")
+
+# Add a subtitle
+st.subheader("Explore Covid-19 Data with Ease")
+
+# Add some markdown content
+st.markdown("""
+This is a simple data visualization app using Streamlit.
+
+### Features:
+- *Interactive visualizations* for Covid-19 data.
+- *Easy-to-use interface* for exploring trends.
+- *Real-time updates* with the latest data.
+
+Enjoy exploring and stay informed!
+""")
+
+# Add an image (replace 'image_url' with an actual URL or local file path)
+#st.image("https://via.placeholder.com/800x400.png?text=Covid-19+Data+Visualization", caption="Covid-19 Data Insights", use_column_width=True)
+
+# Add an interactive button
+if st.button("Click to Learn More"):
+    st.write("Stay tuned for more features coming soon!")
+
+
 
 st.title("Overview")
 
@@ -30,12 +55,4 @@ df["AGE_GROUP"] = pd.cut(df["AGE"], bins=bins, labels=labels, right=False)
 # Count the number of cases in each age group
 age_group_counts = df["AGE_GROUP"].value_counts().sort_index().to_frame(name="Number of Cases")
 
-st.header('Dashboard Covid 19 Cases in Mexico')
-st.selectbox("Select chart to view",['Covid Cases by Age Group', 'Covid Cases by Gender and Age Group','Total Intubated Patients', 'ICU Admission Among Diseases','Total Deceased Patients in Other Diseases']) #select one box
-if st.button("Click Here to Proceed"):
-    if st.selectbox == 'Covid Cases by Age Group':
-        st.markdown("Number of COVID-19 Cases by Age Group")
-      
-    elif st.selectbox == 'Covid Cases by Gender and Age Group':
-        st.markdown("Covid Cases by Gender and Age Group")
       
